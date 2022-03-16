@@ -37,33 +37,25 @@
     let selected = 0;
 </script>
 
-<div
-    style="display: flex-direction: column; margin-left: 90px; margin-top: 25px"
->
+<div style="display: flex-direction: column; margin-left: 90px; margin-top: 25px">
     <span style="font-size: 30px; font-weight: 500;">Projects</span>
 </div>
 
 <div class="table">
+
     <div style="display: flex; gap: 5px">
-        <button style="width: 110px; height: 35px; padding: 0; font-size: 16px"
-            >Create</button
-        >
-        <button
-            style="width: 110px; height: 35px; padding: 0; font-size: 16px"
-            on:click={() => (edit = !edit)}>Edit models</button
-        >
+        <button style="width: 110px; height: 35px; padding: 0; font-size: 16px">Create</button>
+        <button style="width: 110px; height: 35px; padding: 0; font-size: 16px" on:click={() => (edit = !edit)}>Edit models</button>
     </div>
 
-    <div
-        class="table-item"
-        style="border-bottom: 1px solid #ffffff50; background: #18232C; font-weight: bold; border-radius: 10px 10px 0 0"
-    >
+    <div class="table-item" style="border-bottom: 1px solid #ffffff50; background: #18232C; font-weight: bold; border-radius: 10px 10px 0 0">
         <span>Name</span>
         <span>Status</span>
         <span>Type</span>
         <span>Date</span>
         <span>Actions</span>
     </div>
+
     {#each projects as project, index}
         <div class="table-item" style="border-bottom: 1px solid #ffffff50">
             <span>{project.name}</span>
@@ -73,29 +65,25 @@
             <span>{project.actions}</span>
         </div>
     {/each}
+
 </div>
 
 {#if edit}
     <dialog open>
         <article>
+
             <!-- svelte-ignore a11y-missing-content -->
-            <a
-                style="margin-bottom: 0"
-                href="#close"
-                aria-label="Close"
-                class="close"
-                on:click={() => (edit = !edit)}
-            />
+            <a style="margin-bottom: 0" href="#close" aria-label="Close" class="close" on:click={() => (edit = !edit)}/>
             <h3>Models editor</h3>
 
             <div style="display: flex; width: 100%;">
-                <div class="table2">
-                    <div
-                        class="table-item"
-                        style="justify-content: center; border-bottom: 1px solid #ffffff50; background: #18232C; font-weight: bold; border-radius: 10px 0 0 0; border-right: 1px solid #ffffff50"
-                    >
+
+                <div class="modelsTable">
+
+                    <div class="table-item" style="justify-content: center; border-bottom: 1px solid #ffffff50; background: #18232C; font-weight: bold; border-radius: 10px 0 0 0; border-right: 1px solid #ffffff50">
                         <span>Document Type</span>
                     </div>
+
                     {#each docTypes as type, index}
                         <div
                             on:click={() => (selected = index)}
@@ -105,42 +93,33 @@
                             <span>{type}</span>
                         </div>
                     {/each}
+
                 </div>
 
-                <div class="table2">
-                    <div
-                        class="table-item"
-                        style="justify-content: center; border-bottom: 1px solid #ffffff50; background: #18232C; font-weight: bold; border-radius: 0 10px 0 0"
-                    >
+                <div class="modelsTable">
+
+                    <div class="table-item" style="justify-content: center; border-bottom: 1px solid #ffffff50; background: #18232C; font-weight: bold; border-radius: 0 10px 0 0">
                         <span>Model</span>
                     </div>
+
                     {#each models as model, index}
-                        <div
-                            class="table-item"
-                            style="justify-content: center; border-bottom: 1px solid #ffffff50;"
-                        >
+                        <div class="table-item" style="justify-content: center; border-bottom: 1px solid #ffffff50;">
                             <label>
                                 <input type="checkbox" bind:checked={relations[selected][index]}/>
                                 {model}
                             </label>
                         </div>
                     {/each}
+
                 </div>
+
             </div>
 
-            <footer
-                style="padding-bottom: 10px; padding-top: 20px; padding-right: 20px"
-            >
-                <a
-                    href="#cancel"
-                    role="button"
-                    class="secondary"
-                    on:click={() => (edit = !edit)}>Cancel</a
-                >
-                <a href="#confirm" role="button" on:click={() => (edit = !edit)}
-                    >Confirm</a
-                >
+            <footer style="padding-bottom: 10px; padding-top: 20px; padding-right: 20px">
+                <a href="#cancel" role="button" class="secondary" on:click={() => (edit = !edit)}>Cancel</a>
+                <a href="#confirm" role="button" on:click={() => (edit = !edit)}>Confirm</a>
             </footer>
+
         </article>
     </dialog>
 {/if}
@@ -166,7 +145,7 @@
     .table-item:hover {
         background-color: #18232c;
     }
-    .table2 {
+    .modelsTable {
         display: flex;
         flex-direction: column;
     }

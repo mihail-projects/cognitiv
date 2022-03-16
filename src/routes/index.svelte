@@ -25,12 +25,7 @@
         <input type="email" placeholder="Email" bind:value={email} required />
 
         <label for="email">Password</label>
-        <input
-            type="email"
-            placeholder="Password"
-            bind:value={password}
-            required
-        />
+        <input type="email" placeholder="Password" bind:value={password} required/>
 
         <button on:click={authenticate}>Submit</button>
         <small>{msg}</small>
