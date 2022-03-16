@@ -6,29 +6,9 @@
         console.log(userID);
     }
 
-    let projects = [
-        {
-            name: "name",
-            status: "status",
-            type: "type",
-            date: "date",
-            actions: "actions",
-        },
-        {
-            name: "name",
-            status: "status",
-            type: "type",
-            date: "date",
-            actions: "actions",
-        },
-        {
-            name: "name",
-            status: "status",
-            type: "type",
-            date: "date",
-            actions: "actions",
-        },
-    ];
+    let projects = [{name: "name", status: "status", type: "type", date: "date", actions: "actions"},
+                    {name: "name", status: "status", type: "type", date: "date", actions: "actions"},
+                    {name: "name", status: "status", type: "type", date: "date", actions: "actions"}];
 
     let edit = false;
     let docTypes = ["type1", "type2", "type3", "type4", "type5"];
