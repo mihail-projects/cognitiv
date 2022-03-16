@@ -1,10 +1,4 @@
 <script>
-import { append } from "svelte/internal";
-import Index from "../index.svelte";
-import Error from "../__error.svelte";
-import Models from "./models.svelte";
-import Layout from "./__layout.svelte";
-
     if (typeof window !== "undefined") {
         const userID = new URLSearchParams(window.location.search).get(
             "userID"
