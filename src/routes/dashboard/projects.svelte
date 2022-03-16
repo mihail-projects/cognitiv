@@ -36,7 +36,7 @@ import Layout from "./__layout.svelte";
         },
     ];
 
-    let edit = true;
+    let edit = false;
     let docTypes = ["type1", "type2", "type3", "type4", "type5"];
     let models = ["model1", "model2", "model3", "model4", "model5"];
     let relations = [[false, false, false, false, false], [false, false, false, false, false], [false, false, false, false, false], [false, false, false, false, false], [false, false, false, false, false]];

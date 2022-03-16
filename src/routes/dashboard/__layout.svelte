@@ -5,10 +5,6 @@
         on:click={() => (window.location.href = "/dashboard/projects")}
         class="material-icons icon">folder</span
     >
-    <span
-        on:click={() => (window.location.href = "/dashboard/models")}
-        class="material-icons icon">model_training</span
-    >
 </div>
 <div class="bottom">
     <span class="material-icons icon">settings</span>
