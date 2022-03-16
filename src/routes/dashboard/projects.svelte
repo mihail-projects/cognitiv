@@ -1,6 +1,10 @@
 <script>
-    const userID = new URLSearchParams(window.location.search).get("userID");
-    console.log(userID);
+    if (typeof window !== "undefined") {
+        const userID = new URLSearchParams(window.location.search).get(
+            "userID"
+        );
+        console.log(userID);
+    }
 
     let projects = [{name: "name", status: "status", type: "type", date: "date", actions: "actions"},
                     {name: "name", status: "status", type: "type", date: "date", actions: "actions"},
