@@ -1,5 +1,5 @@
 <script>
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined") { //browser only
         const userID = new URLSearchParams(window.location.search).get(
             "userID"
         );
