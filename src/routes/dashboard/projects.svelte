@@ -27,6 +27,29 @@
             .then((data) => console.log(data.result));
     }
 
+    async function addFile(userID, projectID, file) {
+        await fetch("/api/addFile", {
+            method: "POST",
+            body: JSON.stringify({
+                fileID: userID + "-" + projectID,
+                content: file,
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => console.log(data.result));
+    }
+
+    async function removeFile(fileID) {
+        await fetch("/api/removeFile", {
+            method: "POST",
+            body: JSON.stringify({
+                fileID: fileID,
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => console.log(data.result));
+    }
+
     let projects = [
         {
             name: "name",

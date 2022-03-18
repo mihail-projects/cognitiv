@@ -23,10 +23,6 @@
         on:click={() => (window.location.href = "/dashboard/projects")}
         class="material-icons icon">folder</span
     >
-    <span
-    on:click={() => (window.location.href = "/dashboard/files")}
-    class="material-icons icon">description</span
->
 </div>
 <div class="bottom">
     <span class="material-icons icon" on:click={() => auth.logout(auth0Client)}>logout</span>
