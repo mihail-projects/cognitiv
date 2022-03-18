@@ -1,26 +1,27 @@
 <script>
     if (typeof window !== "undefined") {
-        const userID = new URLSearchParams(window.location.search).get(
-            "userID"
+        const projectID = new URLSearchParams(window.location.search).get(
+            "projectID"
         );
     }
 
-    async function addProject(userID) {
-        await fetch("/api/addProject", {
+    async function addFile(userID, projectID, file) {
+        await fetch("/api/addFile", {
             method: "POST",
             body: JSON.stringify({
-                projectID: userID + "-" + (Math.floor(Math.random() * 1000)).toString(),
+                fileID: userID + "-" + projectID,
+                content: file,
             }),
         })
             .then((response) => response.json())
             .then((data) => console.log(data.result));
     }
 
-    async function removeProject(projectID) {
-        await fetch("/api/removeProject", {
+    async function removeFile(fileID) {
+        await fetch("/api/removeFile", {
             method: "POST",
             body: JSON.stringify({
-                projectID: projectID,
+                fileID: fileID,
             }),
         })
             .then((response) => response.json())
